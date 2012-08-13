@@ -4,8 +4,10 @@
 
 CC = gcc
 
-INCLUDE = -I./ -I/usr/local/eyou/mail/opt/include
-LIBRARY = -L/usr/local/eyou/mail/opt/lib -Wl,-R/usr/local/eyou/mail/opt/lib -levent -lpthread -lm
+LIBEVENT_PATH = /usr/local
+
+INCLUDE = -I./ -I$(LIBEVENT_PATH)/include
+LIBRARY = -L$(LIBEVENT_PATH)/lib -Wl,-R$(LIBEVENT_PATH)/lib -levent -lpthread -lm
 
 CFLAGS = -g -Wall -DMDEBUG $(INCLUDE)
 
